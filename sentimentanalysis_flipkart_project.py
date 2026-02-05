@@ -24,6 +24,10 @@ from sklearn.preprocessing import StandardScaler,MinMaxScaler
 from sklearn.model_selection import cross_val_score,cross_validate,StratifiedKFold
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import Pipeline
+from optuna.integration.mlflow import MLflowCallback
+import time
+import joblib
+import os
 import mlflow
 import optuna
 import sklearn
@@ -244,10 +248,7 @@ with mlflow.start_run(run_name="study") as run:
 
 #!pip install optuna-integration[mlflow]
 
-from optuna.integration.mlflow import MLflowCallback
-import time
-import joblib
-import os
+
 
 # Model Building
 
